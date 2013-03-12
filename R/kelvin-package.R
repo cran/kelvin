@@ -44,7 +44,6 @@
 #' and Mathematical Tables, 9th printing. New York: Dover, pp. 379-381, 1972.
 #' 
 #' @references \url{http://mathworld.wolfram.com/KelvinFunctions.html}
-#' 
 #' @references \url{http://mathworld.wolfram.com/BesselFunction.html}
 #'  
 #' @import Bessel
@@ -59,6 +58,4 @@
 #'  
 #' @seealso \code{\link{Keir}}, \code{\link{Beir}}
 NULL
-#
-# .onLoad moved to Kelvin.R
-#
+

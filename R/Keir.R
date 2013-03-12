@@ -17,6 +17,7 @@
 #' 
 #' @export
 #' @name Keir
+#' @aliases Kelvin
 #' 
 #' @return If \code{return.list==FALSE} (default),
 #' a complex matrix with as many columns as using \code{nSeq.} creates.

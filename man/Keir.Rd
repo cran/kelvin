@@ -2,6 +2,7 @@
 \name{Keir}
 \alias{Keir}
 \alias{Keir.default}
+\alias{Kelvin}
 \title{Solutions to the Kelvin differential equations: 'Kei' and 'Ker'}
 \usage{
   Keir(xseq, nu. = 0, nSeq. = 1, add.tol = TRUE,
