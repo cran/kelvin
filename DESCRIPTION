@@ -1,22 +1,20 @@
 Package: kelvin
 Type: Package
-Title: Calculate solutions to Kelvin differential equation using Bessel
-        functions.
-Version: 1.2-1
-Date: 2013-03-12
+Title: Calculate solutions to the Kelvin differential equation using
+        Bessel functions.
+Version: 1.2-2
+Date: 2013-09-03
 Author: Andrew J Barbour
 Maintainer: Andrew J Barbour <andy.barbour@gmail.com>
-Description: Uses Bessel functions to calculate the analytic solutions
-        to the Kelvin differential equation, namely the primary (Be)
-        and complementary (Ke) complex functions.
+Description: Uses Bessel functions to calculate the analytic solutions to the
+    Kelvin differential equation, namely the fundamental (Be) and equivalent
+    (Ke) complex functions.
 Depends: R (>= 2.10.1), Bessel (>= 0.5-4)
-Imports: Bessel
 License: GPL (>= 2)
-URL: http://abarbour.github.com/kelvin/
+URL: http://abarbour.github.io/kelvin/
 LazyLoad: TRUE
-Collate: 'kelvin-package.R' 'zzz.R' 'Beir.R' 'Bei.R' 'Ber.R' 'Keir.R'
-        'Kei.R' 'Ker.R'
-Packaged: 2013-03-12 17:09:01 UTC; abarbour
+Collate: 'kelvin-package.R' 'Beir.R' 'Keir.R' 'zzz.R'
+Packaged: 2013-09-04 17:31:18 UTC; abarbour
 NeedsCompilation: no
 Repository: CRAN
-Date/Publication: 2013-03-12 18:20:53
+Date/Publication: 2013-09-04 20:43:32

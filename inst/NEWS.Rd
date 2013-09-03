@@ -9,6 +9,12 @@
 \title{News for package 'kelvin'}
 \encoding{UTF-8}
 
+\section{CHANGES IN kelvin VERSION 1.2-2 (2013-09-03)}{
+  \itemize{
+    \item Removed README.md from build, per request from CRAN.
+    \item Documentation improvements, and restructuring.
+  }
+}
 \section{CHANGES IN kelvin VERSION 1.2-1 (2013-03-12)}{
   \itemize{
     \item Empty \code{.Last.lib} function removed.

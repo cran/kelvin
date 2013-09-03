@@ -1,9 +1,13 @@
-#' Solutions to the Kelvin differential equations: 'Kei' and 'Ker'
+#' Equivalent solution to the Kelvin differential equation: Bessel-K
 #'
 #' This function calculates the complex solution to the Kelvin differential
-#' equations using modified Bessel function of the second kind, specifically
-#' that which is produced by \code{Bessel::BesselK}.
+#' equation using modified Bessel functions of the second kind, specifically
+#' those produced by \code{Bessel::BesselK}.
 #'
+#' @details
+#' \code{\link{Ker}} and \code{\link{Kei}} are wrapper functions
+#' which return the real and imaginary components, respectively.
+#' 
 #' @param xseq vector; values to evaluate the complex solution at
 #' @param nu. scalar; value of \eqn{\nu} in \eqn{\mathcal{K}_\nu}{Kei, and Ker}
 #' @param nSeq. positive integer; 
@@ -13,13 +17,15 @@
 #' @param add.tol boolean; fudge factor to prevent an error for zero-values
 #' @param return.list boolean; Should the result be a list instead of matrix?
 #' @param show.scaling boolean; Should the normalization values be given as a message?
-#' @param ... additional parameters (currently unused)
+#' @param ... additional arguments. In \code{\link{Keir}} they are
+#' passed to \code{Bessel::BesselK}, and in \code{\link{Ker}}, and \code{\link{Kei}}
+#' they are passed to \code{\link{Keir}}.
 #' 
 #' @export
 #' @name Keir
 #' @aliases Kelvin
 #' 
-#' @return If \code{return.list==FALSE} (default),
+#' @return If \code{return.list==FALSE} (the default),
 #' a complex matrix with as many columns as using \code{nSeq.} creates.
 #' Otherwise the result is a list with matrices for
 #' Real and Imaginary components.
@@ -27,10 +33,11 @@
 #' @author Andrew Barbour <andy.barbour@@gmail.com>
 #' 
 #' @references \url{http://mathworld.wolfram.com/KelvinFunctions.html}
+#' @references Imaginary: \url{http://mathworld.wolfram.com/Kei.html}
+#' @references Real: \url{http://mathworld.wolfram.com/Ker.html}
 #' 
-#' @keywords "Orthogonal functions","complementary Kelvin functions"
-#' 
-#' @seealso \code{\link{Ker}}, \code{\link{Kei}}, \code{\link{Beir}}
+#' @family solutions
+#' @seealso \code{\link{kelvin-package}}
 #' 
 #' @examples
 #' Keir(1:10)    # defaults to nu.=0, nSeq=1
@@ -41,14 +48,11 @@ Keir <- function(xseq, nu.=0, nSeq.=1,
                  return.list=FALSE, 
                  show.scaling=FALSE, ...) UseMethod("Keir")
 
-#' @return \code{NULL}
-#' 
 #' @rdname Keir
-#' @docType methods
 #' @method Keir default
 #' @S3method Keir default
 Keir.default <- function(xseq, nu.=0, nSeq.=1, add.tol=TRUE, return.list=FALSE, show.scaling=FALSE, ...){
-  require(Bessel)
+  #require(Bessel)
   if (add.tol){
     ret.ind <- FALSE
     #heuristic fix for zero values
@@ -72,7 +76,7 @@ Keir.default <- function(xseq, nu.=0, nSeq.=1, add.tol=TRUE, return.list=FALSE, 
   Bsc <- zapsmall(exp(-1*pi*(Nu.)*(1i)/2))
   if (show.scaling) {message(sprintf("\t>>>>\tnu=%i\tscaling:\t%s\n", Nu., Bsc))}
   #
-  Bsl <- Bessel::BesselK(BessX, nu=nu., nSeq=nSeq.)
+  Bsl <- Bessel::BesselK(BessX, nu=nu., nSeq=nSeq., ...)
   #Bsl <- BesselK(BessX, nu=nu., nSeq=nSeq.)
   nr. <- length(as.vector(BessX))
   stopifnot(!is.null(nr.))
@@ -87,3 +91,19 @@ Keir.default <- function(xseq, nu.=0, nSeq.=1, add.tol=TRUE, return.list=FALSE, 
   }
   return(Bsl)
 }
+
+#' @rdname Keir
+#' @export
+#' @examples
+#' 
+#' # Imaginary component only
+#' Kei(1:10)
+Kei <- function(...) Keir(..., return.list=TRUE)$kei
+
+#' @rdname Keir
+#' @export
+#' @examples
+#' 
+#' # Real component only
+#' Ker(1:10)
+Ker <- function(...) Keir(..., return.list=TRUE)$ker

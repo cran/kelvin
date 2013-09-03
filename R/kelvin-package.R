@@ -1,5 +1,12 @@
-#' Fundamental and complementary solutions to the Kelvin differential equation.
+#' Fundamental and equivalent solutions to the Kelvin differential equation
+#' using Bessel functions
 #'
+#' @description
+#' The functions here use Bessel functions to calculate the analytic solutions to the
+#' Kelvin differential equation, namely the fundamental (Be) and equivalent
+#' (Ke) complex functions.
+#'
+#' @details
 #' The complex second-order ordinary differential equation, known as the
 #' Kelvin differential equation, is defined as
 #' \deqn{x^2 \ddot{y} + x \dot{y} - \left(i x^2 + \nu^2\right) y = 0}
@@ -43,19 +50,19 @@
 #' \eqn{\S 9.9} in Handbook of Mathematical Functions with Formulas, Graphs, 
 #' and Mathematical Tables, 9th printing. New York: Dover, pp. 379-381, 1972.
 #' 
-#' @references \url{http://mathworld.wolfram.com/KelvinFunctions.html}
-#' @references \url{http://mathworld.wolfram.com/BesselFunction.html}
+#' @references Kelvin functions: \url{http://mathworld.wolfram.com/KelvinFunctions.html}
+#' @references Bessel functions: \url{http://mathworld.wolfram.com/BesselFunction.html}
 #'  
-#' @import Bessel
+# @import Bessel
 #' 
 #' @docType package
 #' 
 #' @name kelvin-package
-#' 
 #' @aliases kelvin
-#'
-#' @title Solutions to the Kelvin differential equations
 #'  
-#' @seealso \code{\link{Keir}}, \code{\link{Beir}}
+#' @seealso 
+#' Fundamental solution: \code{\link{Beir}}
+#' @seealso
+#' Equivalent solution: \code{\link{Keir}}
 NULL
 

@@ -2,10 +2,13 @@
 \name{kelvin-package}
 \alias{kelvin}
 \alias{kelvin-package}
-\title{Solutions to the Kelvin differential equations}
+\title{Fundamental and equivalent solutions to the Kelvin differential equation
+using Bessel functions}
 \description{
-  Fundamental and complementary solutions to the Kelvin
-  differential equation.
+  The functions here use Bessel functions to calculate the
+  analytic solutions to the Kelvin differential equation,
+  namely the fundamental (Be) and equivalent (Ke) complex
+  functions.
 }
 \details{
   The complex second-order ordinary differential equation,
@@ -60,11 +63,15 @@
   Functions with Formulas, Graphs, and Mathematical Tables,
   9th printing. New York: Dover, pp. 379-381, 1972.
 
+  Kelvin functions:
   \url{http://mathworld.wolfram.com/KelvinFunctions.html}
 
+  Bessel functions:
   \url{http://mathworld.wolfram.com/BesselFunction.html}
 }
 \seealso{
-  \code{\link{Keir}}, \code{\link{Beir}}
+  Fundamental solution: \code{\link{Beir}}
+
+  Equivalent solution: \code{\link{Keir}}
 }
 
