@@ -1,19 +1,17 @@
-#' Fundamental solution to the Kelvin differential equation: Bessel-J
+#' Fundamental solution to the Kelvin differential equation (J)
 #'
 #' This function calculates the complex solution to the Kelvin differential
-#' equation using modified Bessel functions of the first kind, specifically
-#' those produced by \code{Bessel::BesselJ}.
+#' equation using modified Bessel functions of the \emph{first kind}, specifically
+#' those produced by \code{\link[Bessel]{BesselJ}}.
 #'
 #' @details
 #' \code{\link{Ber}} and \code{\link{Bei}} are wrapper functions
-#' which return the real and imaginary components, respectively.
+#' which return the real and imaginary components of \code{\link{Beir}}, respectively.
 #' 
-#' @param xseq vector; values to evaluate the complex solution at
-#' @param nu. scalar; value of \eqn{\nu} in \eqn{\mathcal{B}_\nu}{Bei, and Ber}
-#' @param return.list boolean; Should the result be a list instead of matrix?
-#' @param ... additional arguments. In \code{\link{Beir}} they are
-#' passed to \code{Bessel::BesselJ}, and in \code{\link{Ber}}, and \code{\link{Bei}}
-#' they are passed to \code{\link{Beir}}.
+#' @inheritParams Keir
+#' @param nu. numeric; value of \eqn{\nu} in \eqn{\mathcal{B}_\nu}{Bei,Ber} solutions
+#' @param nSeq. positive integer; equivalent to \code{nSeq} in \code{\link[Bessel]{BesselJ}}
+#' @param ... additional arguments passed to \code{\link[Bessel]{BesselK}} or \code{\link{Beir}}
 #' 
 #' @export
 #' @name Beir
@@ -23,31 +21,32 @@
 #' Otherwise the result is a list with matrices for
 #' Real and Imaginary components.
 #' 
-#' @author Andrew Barbour <andy.barbour@@gmail.com>
+#' @author Andrew Barbour
 #' 
 #' @references \url{http://mathworld.wolfram.com/KelvinFunctions.html}
 #' @references Imaginary: \url{http://mathworld.wolfram.com/Bei.html}
 #' @references Real: \url{http://mathworld.wolfram.com/Ber.html}
 #' 
-#' @family solutions
-#' @seealso \code{\link{kelvin-package}}
+#' @seealso \code{\link{kelvin-package}}, \code{\link{Keir}}, \code{\link[Bessel]{BesselJ}}
 #' 
 #' @examples
+#' 
 #' Beir(1:10)    # defaults to nu.=0
 #' Beir(1:10, nu.=2)
-Beir <- function(xseq, nu.=0, return.list=FALSE, ...) UseMethod("Beir")
+#' Beir(1:10, nSeq.=2)
+#' Beir(1:10, nSeq.=2, return.list=TRUE)
+#' 
+Beir <- function(x, ...) UseMethod("Beir")
 
 #' @rdname Beir
-#' @method Beir default
-#' @S3method Beir default
-Beir.default <- function(xseq, nu.=0, return.list=FALSE, ...){
-  #require(Bessel)
-  toret <- Bessel::BesselJ(xseq*exp(3*pi*(1i)/4), nu=nu., ...)
-  #toret <- BesselJ(xseq*exp(3*pi*(1i)/4), nu=nu., ...)
+#' @export
+Beir.default <- function(x, nu.=0, nSeq.=1, return.list=FALSE, ...){
+  bess <- Bessel::BesselJ(x * exp(3 * pi * complex(real=0, imaginary = 1) / 4), nu=nu., nSeq=nSeq., ...)
+  bess <- as.matrix(bess)
   if (return.list){
-    toret <- list(bei=Im(toret), ber=Re(toret))
+    bess <- list(bei=Im(bess), ber=Re(bess))
   }
-  return(toret)
+  return(bess)
 }
 
 #' @rdname Beir
@@ -56,7 +55,7 @@ Beir.default <- function(xseq, nu.=0, return.list=FALSE, ...){
 #' 
 #' # Imaginary component only
 #' Bei(1:10)
-Bei <- function(...) Beir(..., return.list=TRUE)$bei
+Bei <- function(...) Beir(..., return.list=TRUE)[['bei']]
 
 #' @rdname Beir
 #' @export
@@ -64,4 +63,4 @@ Bei <- function(...) Beir(..., return.list=TRUE)$bei
 #' 
 #' # Real component only
 #' Ber(1:10)
-Ber <- function(...) Beir(..., return.list=TRUE)$ber
+Ber <- function(...) Beir(..., return.list=TRUE)[['ber']]

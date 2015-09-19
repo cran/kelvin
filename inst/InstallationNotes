@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# Upstream dependencies 'gmp' and 'Rmpfr' will fail if 
+# the GNU MP or MPFR libraries are missing, respectively.
+#
+# This will install the necessary libraries to /...
+#
+
+# modify the url if there are newer versions
+wget -nc https://r.research.att.com/libs/gmp-6.0.0-darwin.13-x86_64.tar.gz
+wget -nc https://r.research.att.com/libs/mpfr-3.1.2-darwin.13-x86_64.tar.gz
+
+# untar and install to /
+sudo tar fxz gmp-6.0.0-darwin.13-x86_64.tar.gz -C /
+sudo tar fxz mpfr-3.1.2-darwin.13-x86_64.tar.gz -C /

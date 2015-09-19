@@ -1,14 +1,22 @@
-% borrowed some formatting from
-% http://svn.r-project.org/R/trunk/doc/NEWS.Rd
 % -*- coding: utf-8 -*-
-%%\newcommand{\PR}{\Sexpr[results=rd]{tools:::Rd_expr_PR(#1)}}
-%%\newcommand{\Rlogo}{\if{html}{\figure{../../html/logo.jpg}}\if{latex}{\figure{logo.jpg}{options: width=0.5in}}}
-\newcommand{\CRANpkg}{\href{http://CRAN.R-project.org/package=#1}{\pkg{#1}}}
+\newcommand{\GITpkg}{\href{http://www.github.com/abarbour/#1}{github}}
+\newcommand{\CRANpkg}{\href{http://cran.r-project.org/package=#1}{CRAN}}
+\newcommand{\CODEcov}{\href{http://codecov.io/github/abarbour/#1?branch=master}{codecov.io}}
+\newcommand{\Trav}{\href{https://travis-ci.org/abarbour/#1}{Travis-CI}}
+\newcommand{\kel}{\pkg{kelvin}}
+\newcommand{\gitkel}{\GITpkg{kelvin} page}
 
 \name{kelvin}
-\title{News for package 'kelvin'}
+\title{News for package \kel: \CRANpkg{kelvin} -- \GITpkg{kelvin} -- \Trav{kelvin} -- \CODEcov{kelvin}}
 \encoding{UTF-8}
 
+\section{CHANGES IN kelvin VERSION 2.0-0 (2015-09-18)}{
+  \itemize{
+    \item Lots of cleanup.
+    \item Previous demo converted to vignette.
+    \item Unit tests.
+  }
+}
 \section{CHANGES IN kelvin VERSION 1.2-2 (2013-09-03)}{
   \itemize{
     \item Removed README.md from build, per request from CRAN.

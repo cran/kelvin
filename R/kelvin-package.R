@@ -53,7 +53,7 @@
 #' @references Kelvin functions: \url{http://mathworld.wolfram.com/KelvinFunctions.html}
 #' @references Bessel functions: \url{http://mathworld.wolfram.com/BesselFunction.html}
 #'  
-# @import Bessel
+#' @importFrom Bessel BesselK BesselJ
 #' 
 #' @docType package
 #' 
