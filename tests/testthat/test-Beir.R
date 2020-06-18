@@ -7,7 +7,7 @@ bi <- Bei(x)
 br <- Ber(x)
 b <- Beir(x)
 b.l <- Beir(x, return.list = TRUE)
-b2 <- Beir(x, nSeq=2)
+b2 <- Beir(x, nSeq. = 2)
 
 test_that("Convenience functions work properly",{
   expect_is(bi, 'matrix')

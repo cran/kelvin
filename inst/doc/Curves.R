@@ -1,7 +1,7 @@
-## ---- echo=TRUE----------------------------------------------------------
+## ---- echo=TRUE---------------------------------------------------------------
 library(kelvin)
 
-## ---- echo=TRUE, results='asis'------------------------------------------
+## ---- echo=TRUE, results='asis'-----------------------------------------------
 plot_kelvin_curves <- function(){
   # Kelvin functions (order 0 by default)
   num.pts <- 1e3
@@ -33,6 +33,6 @@ plot_kelvin_curves <- function(){
   legend(0.5, 7, 0:5, col=1:6, lty=1, lwd=2)
 }
 
-## ---- echo=TRUE, fig.show='hold', fig.width=8.5, fig.height=11-----------
+## ---- echo=TRUE, fig.show='hold', fig.width=8.5, fig.height=11----------------
 plot_kelvin_curves()
 
