@@ -59,6 +59,13 @@ Kelvin functions: \url{http://mathworld.wolfram.com/KelvinFunctions.html}
 Bessel functions: \url{http://mathworld.wolfram.com/BesselFunction.html}
 }
 \seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/abarbour/kelvin}
+  \item Report bugs at \url{https://github.com/abarbour/kelvin/issues}
+}
+
+
 Fundamental solution: \code{\link{Beir}}
 
 Equivalent solution: \code{\link{Keir}}

@@ -1,16 +1,18 @@
 % -*- coding: utf-8 -*-
-\newcommand{\GITpkg}{\href{https://www.github.com/abarbour/#1}{github}}
+\newcommand{\GITpkg}{\href{https://github.com/abarbour/#1}{github}}
 \newcommand{\CRANpkg}{\href{https://cran.r-project.org/package=#1}{CRAN}}
-\newcommand{\CODEcov}{\href{https://codecov.io/github/abarbour/#1?branch=master}{codecov.io}}
-\newcommand{\Trav}{\href{https://travis-ci.org/abarbour/#1}{Travis-CI}}
 \newcommand{\kel}{\pkg{kelvin}}
-\newcommand{\gitkel}{\GITpkg{kelvin} page}
 
 \name{kelvin}
-\title{News for package \kel: \CRANpkg{kelvin} -- \GITpkg{kelvin} -- \Trav{kelvin} -- \CODEcov{kelvin}}
+\title{News for package \kel: \CRANpkg{kelvin} -- \GITpkg{kelvin}}
 \encoding{UTF-8}
 
-\section{CHANGES IN kelvin VERSION 2.0-1 (2020-06-17777777)}{
+\section{CHANGES IN kelvin VERSION 2.0-3 (2025-04-13)}{
+  \itemize{
+    \item Cleanup; addresses CRAN requirement changes.
+  }
+}
+\section{CHANGES IN kelvin VERSION 2.0-1 (2020-06-17)}{
   \itemize{
     \item Lots of cleanup.
     \item Previous demo converted to vignette.
@@ -55,4 +57,8 @@
     and is likely aware of the conflict.
   }
 }
-\section{kelvin INITIAL VERSION 1.0-0 (2012-05-30)}{}
+\section{kelvin INITIAL VERSION 1.0-0 (2012-05-30)}{
+  \itemize{
+    \item first version released to CRAN
+  }
+}

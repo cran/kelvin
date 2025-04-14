@@ -2,7 +2,7 @@
 #'
 #' This function calculates the complex solution to the Kelvin differential
 #' equation using modified Bessel functions of the \emph{first kind}, specifically
-#' those produced by \code{\link{BesselJ}}.
+#' those produced by \code{\link[Bessel]{BesselJ}}.
 #'
 #' @details
 #' \code{\link{Ber}} and \code{\link{Bei}} are wrapper functions
@@ -10,8 +10,8 @@
 #' 
 #' @inheritParams Keir
 #' @param nu. numeric; value of \eqn{\nu} in \eqn{\mathcal{B}_\nu}{Bei,Ber} solutions
-#' @param nSeq. positive integer; equivalent to \code{nSeq} in \code{\link{BesselJ}}
-#' @param ... additional arguments passed to \code{\link{BesselK}} or \code{\link{Beir}}
+#' @param nSeq. positive integer; equivalent to \code{nSeq} in \code{\link[Bessel]{BesselJ}}
+#' @param ... additional arguments passed to \code{\link[Bessel]{BesselK}} or \code{\link{Beir}}
 #' 
 #' @export
 #' @name Beir
@@ -23,11 +23,11 @@
 #' 
 #' @author Andrew Barbour
 #' 
-#' @references \url{http://mathworld.wolfram.com/KelvinFunctions.html}
-#' @references Imaginary: \url{http://mathworld.wolfram.com/Bei.html}
-#' @references Real: \url{http://mathworld.wolfram.com/Ber.html}
+#' @references \url{https://mathworld.wolfram.com/KelvinFunctions.html}
+#' @references Imaginary: \url{https://mathworld.wolfram.com/Bei.html}
+#' @references Real: \url{https://mathworld.wolfram.com/Ber.html}
 #' 
-#' @seealso \code{\link{kelvin-package}}, \code{\link{Keir}}, \code{\link{BesselJ}}
+#' @seealso \code{\link{kelvin-package}}, \code{\link{Keir}}, \code{\link[Bessel]{BesselJ}}
 #' 
 #' @examples
 #' 

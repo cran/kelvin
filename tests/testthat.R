@@ -1,7 +1,12 @@
+# This file is part of the standard setup for testthat.
+# It is recommended that you do not modify it.
 #
-# The Hadley-verse is an amazing place: unit testing via testthat
-# See also  http://r-pkgs.had.co.nz/tests.html
-#
+# Where should you do additional test configuration?
+# Learn more about the roles of various files in:
+# * https://r-pkgs.org/testing-design.html#sec-tests-files-overview
+# * https://testthat.r-lib.org/articles/special-files.html
+
 library(testthat)
-options(testthat.use_colours = FALSE)
+library(kelvin)
+
 test_check("kelvin")

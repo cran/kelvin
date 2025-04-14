@@ -2,7 +2,7 @@
 #'
 #' This function calculates the complex solution to the Kelvin differential
 #' equation using modified Bessel functions of the \emph{second kind}, specifically
-#' those produced by \code{\link{BesselK}}.
+#' those produced by \code{\link[Bessel]{BesselK}}.
 #'
 #' @details
 #' \code{\link{Ker}} and \code{\link{Kei}} are wrapper functions
@@ -10,11 +10,11 @@
 #' 
 #' @param x numeric; values to evaluate the complex solution at
 #' @param nu. numeric; value of \eqn{\nu} in \eqn{\mathcal{K}_\nu}{Kei,Ker} solutions
-#' @param nSeq. positive integer; equivalent to \code{nSeq} in \code{\link{BesselK}}
+#' @param nSeq. positive integer; equivalent to \code{nSeq} in \code{\link[Bessel]{BesselK}}
 #' @param add.tol logical; Should a fudge factor be added to prevent an error for zero-values?
 #' @param return.list logical; Should the result be a list instead of matrix?
 #' @param show.scaling logical; Should the normalization values be given as a message?
-#' @param ... additional arguments passed to \code{\link{BesselK}} or \code{\link{Keir}}
+#' @param ... additional arguments passed to \code{\link[Bessel]{BesselK}} or \code{\link{Keir}}
 #' 
 #' @export
 #' @name Keir
@@ -26,11 +26,11 @@
 #'
 #' @author Andrew Barbour
 #' 
-#' @references \url{http://mathworld.wolfram.com/KelvinFunctions.html}
-#' @references Imaginary: \url{http://mathworld.wolfram.com/Kei.html}
-#' @references Real: \url{http://mathworld.wolfram.com/Ker.html}
+#' @references \url{https://mathworld.wolfram.com/KelvinFunctions.html}
+#' @references Imaginary: \url{https://mathworld.wolfram.com/Kei.html}
+#' @references Real: \url{https://mathworld.wolfram.com/Ker.html}
 #' 
-#' @seealso \code{\link{kelvin-package}}, \code{\link{Beir}}, \code{\link{BesselK}}
+#' @seealso \code{\link{kelvin-package}}, \code{\link{Beir}}, \code{\link[Bessel]{BesselK}}
 #' 
 #' @examples
 #' 

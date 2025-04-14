@@ -18,11 +18,11 @@ Ber(...)
 \arguments{
 \item{x}{numeric; values to evaluate the complex solution at}
 
-\item{...}{additional arguments passed to \code{\link{BesselK}} or \code{\link{Beir}}}
+\item{...}{additional arguments passed to \code{\link[Bessel]{BesselK}} or \code{\link{Beir}}}
 
 \item{nu.}{numeric; value of \eqn{\nu} in \eqn{\mathcal{B}_\nu}{Bei,Ber} solutions}
 
-\item{nSeq.}{positive integer; equivalent to \code{nSeq} in \code{\link{BesselJ}}}
+\item{nSeq.}{positive integer; equivalent to \code{nSeq} in \code{\link[Bessel]{BesselJ}}}
 
 \item{return.list}{logical; Should the result be a list instead of matrix?}
 }
@@ -35,7 +35,7 @@ Real and Imaginary components.
 \description{
 This function calculates the complex solution to the Kelvin differential
 equation using modified Bessel functions of the \emph{first kind}, specifically
-those produced by \code{\link{BesselJ}}.
+those produced by \code{\link[Bessel]{BesselJ}}.
 }
 \details{
 \code{\link{Ber}} and \code{\link{Bei}} are wrapper functions
@@ -56,14 +56,14 @@ Bei(1:10)
 Ber(1:10)
 }
 \references{
-\url{http://mathworld.wolfram.com/KelvinFunctions.html}
+\url{https://mathworld.wolfram.com/KelvinFunctions.html}
 
-Imaginary: \url{http://mathworld.wolfram.com/Bei.html}
+Imaginary: \url{https://mathworld.wolfram.com/Bei.html}
 
-Real: \url{http://mathworld.wolfram.com/Ber.html}
+Real: \url{https://mathworld.wolfram.com/Ber.html}
 }
 \seealso{
-\code{\link{kelvin-package}}, \code{\link{Keir}}, \code{\link{BesselJ}}
+\code{\link{kelvin-package}}, \code{\link{Keir}}, \code{\link[Bessel]{BesselJ}}
 }
 \author{
 Andrew Barbour

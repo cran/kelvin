@@ -55,7 +55,8 @@
 #'  
 #' @importFrom Bessel BesselK BesselJ
 #' 
-#' @docType package
+"_PACKAGE"
+# docType package
 #' 
 #' @name kelvin-package
 #' @aliases kelvin
